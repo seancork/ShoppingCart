@@ -1,0 +1,80 @@
+$primary: #666EE8 !default;
+$secondary: #FFF !default;
+$border-radius: 8px !default;
+$card-spacer-x: 1rem !default;
+
+$box-shadow: 0 2px 6px 0 rgba(69,73,91,0.08) !default;
+$card-border-width: 0 !default;
+$card-cap-bg: #F9FAFD;
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~font-awesome/scss/font-awesome.scss';
+
+body {
+    background-color: #F4F5FA;
+}
+
+// Product image cover, center & no repeat
+.product-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// Navbar needs appropriate z-index
+.navbar {
+    z-index: 100;
+}
+
+// Shopping cart, desktop + mobile
+.cart {
+    position: absolute;
+    right: 15px;
+    top: 56px;
+    width: 500px;
+    @include media-breakpoint-down(md) {
+        width: calc(100% - 30px);
+    }
+}
+
+// Overlay for when the shopping cart is open
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+// Button needs to have position relative so we can add a loader
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+// Loader wrapper, black & white variant
+.loader-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    &.white {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+// Utilities
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.flex-1 {
+    flex: 1;
+}
